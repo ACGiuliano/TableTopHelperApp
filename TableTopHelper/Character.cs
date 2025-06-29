@@ -15,8 +15,13 @@ namespace TableTopHelper
         public string Desire { get; set; }
         public string Sire { get; set; }
         public int Generation { get; set; }
+        public int Health { get; set; }
+        public int Willpower { get; set; }
+        public int Humanity { get; set; } = 7; // Default humanity value for a new character in VtM
 
-        public Character(string name, string clan, string concept, string ambition, string desire, string sire, int generation)
+        public Attributes Attributes { get; set; } = new Attributes();
+
+        public Character(string name, string clan, string concept, string ambition, string desire, string sire, int generation, int health, int willpower, int humanity, Attributes attributes)
         {
             Name = name;
             Clan = clan;
@@ -25,6 +30,10 @@ namespace TableTopHelper
             Desire = desire;
             Sire = sire;
             Generation = generation;
+            Health = health;
+            Willpower = willpower;
+            Humanity = humanity;
+            Attributes = attributes;
         }
     }
 }
